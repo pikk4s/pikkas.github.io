@@ -1,23 +1,14 @@
 /* =========================================================
-   EDITA AQUÍ TUS PROYECTOS
-   - image: ruta a una imagen (p. ej. "img/proyecto1.jpg"). Si la dejas vacía
-     se muestra el icono metálico indicado en "icon".
-   - icon: play | vertical | motion | audio | strategy  (ver ICONS en main.js)
-   - badge: etiqueta pequeña en la esquina de la miniatura
-   - link: URL a YouTube, Instagram, Behance... (opcional)
-   - featured: true -> tarjeta grande con estadísticas y acabado prismático
+   EDITA AQUÍ "LO QUE HAGO"
+   Las tarjetas se alternan como en la referencia:
+   - kind: "num"   -> tarjeta con número grande, título, texto y luz metálica abajo
+   - kind: "flute" -> tarjeta de vidrio acanalado con una etiqueta centrada.
+                      image (opcional): ruta a una imagen que se verá a través del vidrio
+   - link (opcional): URL a la que lleva la tarjeta
    ========================================================= */
 const projects = [
-  {
-    client: "YouTube · Emprendimiento",
-    title: "Edición continua para un creador de YouTube", badge: "YouTube", icon: "play",
-    desc: "Vídeos largos para un canal de emprendimiento y sus versiones cortas para redes.",
-    image: "", link: "",
-    featured: true,
-    stats: [["+4", "años editando"], ["+2", "años con el mismo creador"], ["100%", "remoto"]]
-  },
-  { client: "Formato corto", title: "Reels, Shorts y TikToks", badge: "9:16", icon: "vertical", desc: "Piezas verticales nativas o sacadas de vídeos largos y pódcast.", image: "", link: "" },
-  { client: "Motion graphics", title: "Animación y gráficos", badge: "Motion", icon: "motion", desc: "Gráficos que explican ideas y refuerzan la marca.", image: "", link: "" },
-  { client: "Diseño sonoro", title: "Sonido y acabado", badge: "Audio", icon: "audio", desc: "Música, efectos y mezcla al ritmo de la historia.", image: "", link: "" },
-  { client: "Estrategia", title: "Dirección creativa y contenido", badge: "Estrategia", icon: "strategy", desc: "Formatos, estilo visual y calendario con un objetivo claro.", image: "", link: "" }
+  { kind: "num", num: "01", title: "Edición de video", desc: "Videos largos para YouTube y sus versiones cortas para redes.", link: "" },
+  { kind: "flute", label: "Reels, Shorts y TikToks", image: "", link: "" },
+  { kind: "num", num: "02", title: "Motion graphics y sonido", desc: "Animación, efectos y mezcla al ritmo de la historia.", link: "" },
+  { kind: "flute", label: "Dirección creativa", image: "", link: "" }
 ];

@@ -3,155 +3,140 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pikk4s · Editor de vídeo senior y productor</title>
-  <meta name="description" content="Juan (Pikk4s): editor de vídeo senior y productor audiovisual para creadores y marcas que quieren comunicar mejor y crecer en redes sociales." />
+  <title>Pikk4s · Editor de video senior y productor</title>
+  <meta name="description" content="Juan (Pikk4s): editor de video senior y productor. Produzco y edito videos para creadores y marcas que quieren comunicar mejor, conectar con su audiencia y crecer en redes sociales." />
   <link rel="icon" href="favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png" />
   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-  <meta name="theme-color" content="#050505" />
-  <meta property="og:title" content="Pikk4s · Editor de vídeo senior y productor" />
-  <meta property="og:description" content="Produzco y edito vídeos para creadores y marcas que quieren comunicar mejor y crecer en redes sociales." />
+  <meta name="theme-color" content="#050506" />
+  <meta property="og:title" content="Pikk4s · Editor de video senior y productor" />
+  <meta property="og:description" content="Produzco y edito videos para creadores y marcas que quieren comunicar mejor, conectar con su audiencia y crecer en redes sociales." />
   <meta property="og:image" content="https://pikk4s.com/img/icon-512.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=bf57f5ed" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css?v=c9147b89" />
+  <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
 
-  <!-- Gradientes compartidos por los SVG (metal y prisma) -->
-  <svg class="svg-defs" aria-hidden="true" focusable="false">
-    <defs>
-      <linearGradient id="g-metal" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0" stop-color="#ffffff" />
-        <stop offset=".3" stop-color="#d4d4d7" />
-        <stop offset=".52" stop-color="#7f7f85" />
-        <stop offset=".7" stop-color="#ececee" />
-        <stop offset="1" stop-color="#9a9aa0" />
-      </linearGradient>
-      <linearGradient id="g-prism" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0" stop-color="#ff3d6e" />
-        <stop offset=".2" stop-color="#ffb347" />
-        <stop offset=".38" stop-color="#ffe45c" />
-        <stop offset=".55" stop-color="#4dffa6" />
-        <stop offset=".72" stop-color="#3cc8ff" />
-        <stop offset=".86" stop-color="#6a5cff" />
-        <stop offset="1" stop-color="#c45cff" />
-      </linearGradient>
-    </defs>
-  </svg>
+  <!-- Pantalla de carga -->
+  <div class="loader" aria-hidden="true">
+    <span class="loader-logo"></span>
+    <span class="loader-bar"></span>
+  </div>
 
-  <header class="topbar">
+  <!-- Fondo: rejilla fina + luces metálicas -->
+  <div class="bg" aria-hidden="true"><span class="bg-orb o1"></span><span class="bg-orb o2"></span></div>
+
+  <header class="topbar" data-intro style="--d:.15s">
     <a href="#inicio" class="brand" aria-label="Pikk4s, ir al inicio"><span class="brand-logo"></span></a>
-    <nav class="nav">
-      <a href="#inicio" class="hide-sm">Inicio</a>
-      <a href="#sobre-mi">Sobre mí</a>
-      <a href="#proyectos">Proyectos</a>
-      <a href="#contacto" class="cta">Contacto</a>
+    <nav class="nav glass" aria-label="Principal">
+      <a href="#inicio" data-spy="inicio">Inicio</a>
+      <a href="#sobre-mi" data-spy="sobre-mi">Sobre mí</a>
+      <a href="#proyectos" data-spy="proyectos">Proyectos</a>
+      <a href="#contacto" data-spy="contacto">Contacto</a>
     </nav>
+    <div class="counter" aria-hidden="true"><b id="count-now">01</b> / <span id="count-total">05</span></div>
   </header>
 
   <main>
-    <!-- ================= HERO ================= -->
-    <div class="hero-shell" id="inicio">
-      <!-- Haz de luz prismático (único elemento de color fuerte de la portada) -->
-      <svg class="light-ribbon" viewBox="0 0 1440 600" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
-        <defs>
-          <linearGradient id="ribbon" x1="0" y1="0" x2="1440" y2="0" gradientUnits="userSpaceOnUse">
-            <stop offset="0" stop-color="#3b2cff" />
-            <stop offset=".22" stop-color="#4d7dff" />
-            <stop offset=".42" stop-color="#ff3d6e" />
-            <stop offset=".55" stop-color="#ffb347" />
-            <stop offset=".64" stop-color="#c45cff" />
-            <stop offset=".82" stop-color="#6a5cff" />
-            <stop offset="1" stop-color="#3cf0ff" />
-          </linearGradient>
-          <linearGradient id="core" x1="0" y1="0" x2="1440" y2="0" gradientUnits="userSpaceOnUse">
-            <stop offset="0" stop-color="#fff" stop-opacity="0" />
-            <stop offset=".45" stop-color="#fff" stop-opacity=".9" />
-            <stop offset="1" stop-color="#fff" stop-opacity=".6" />
-          </linearGradient>
-          <radialGradient id="haze" cx=".48" cy=".75" r=".45">
-            <stop offset="0" stop-color="#ff2d55" stop-opacity=".28" />
-            <stop offset="1" stop-color="#ff2d55" stop-opacity="0" />
-          </radialGradient>
-          <filter id="blur-lg" x="-20%" y="-50%" width="140%" height="200%"><feGaussianBlur stdDeviation="22" /></filter>
-          <filter id="blur-sm" x="-20%" y="-50%" width="140%" height="200%"><feGaussianBlur stdDeviation="4" /></filter>
-        </defs>
-        <ellipse cx="690" cy="430" rx="520" ry="150" fill="url(#haze)" />
-        <g class="drift" fill="none" stroke-linecap="round">
-          <path d="M-60 520 C 400 470 900 400 1500 220" stroke="#3b4dff" stroke-width="1.2" opacity=".55" />
-          <path d="M-60 560 C 380 500 920 430 1500 260" stroke="#2a3bd6" stroke-width="1" opacity=".35" />
-          <path d="M-60 400 C 300 470 650 520 960 450 S 1360 250 1500 170" stroke="url(#ribbon)" stroke-width="44" opacity=".35" filter="url(#blur-lg)" />
-          <path d="M-60 400 C 300 470 650 520 960 450 S 1360 250 1500 170" stroke="url(#ribbon)" stroke-width="7" opacity=".85" filter="url(#blur-sm)" />
-          <path d="M-60 400 C 300 470 650 520 960 450 S 1360 250 1500 170" stroke="url(#ribbon)" stroke-width="2.5" />
-          <path d="M-60 400 C 300 470 650 520 960 450 S 1360 250 1500 170" stroke="url(#core)" stroke-width="1" />
-        </g>
-      </svg>
+    <!-- ================= INICIO ================= -->
+    <section id="inicio" class="wrap hero" data-section>
+      <!-- Tarjeta de retrato. Para poner una foto propia:
+           <img class="portrait-img" src="img/tu-foto.webp" alt="Juan, Pikk4s"> dentro de .portrait -->
+      <figure class="portrait" data-intro="clip" style="--d:.35s">
+        <span class="orb" aria-hidden="true"></span>
+        <span class="flutes" aria-hidden="true"></span>
+        <span class="portrait-logo" aria-hidden="true"></span>
+        <figcaption>
+          <span>Pikk4s</span>
+          <span>Editor de video senior · Productor</span>
+        </figcaption>
+      </figure>
 
-      <section class="wrap hero">
-        <!-- Retrato con marcas de encuadre -->
-        <figure class="portrait frame">
-          <span class="corner tl"></span><span class="corner tr"></span>
-          <span class="corner bl"></span><span class="corner br"></span>
-          <img src="img/juan-hero.webp" alt="Retrato de Juan, Pikk4s" width="733" height="858" />
-        </figure>
-
-        <div class="hero-copy">
-          <div class="dots" aria-hidden="true"><span></span><span></span><span></span></div>
-          <h1><span class="light">Hola, soy</span> <span class="metal-text">Juan</span></h1>
-          <div class="role">Editor de vídeo senior <span class="sep"></span> Productor</div>
-          <p>Edito y produzco vídeos para creadores y marcas que quieren <strong>crecer en redes.</strong></p>
-          <div class="actions">
-            <a href="#proyectos" class="btn btn-metal">Proyectos</a>
-            <a href="#contacto" class="btn btn-prism">Contáctame →</a>
-          </div>
+      <div class="hero-copy">
+        <div class="dots" data-intro style="--d:.55s" aria-hidden="true"><span></span><span></span><span></span></div>
+        <h1 class="hero-title">
+          <span class="w"><span class="light" style="--d:.6s">Hola,</span></span>
+          <span class="w"><span class="light" style="--d:.68s">soy</span></span>
+          <span class="w"><span class="chrome strong" style="--d:.78s">Juan</span></span>
+        </h1>
+        <p class="role" data-intro style="--d:.95s">Editor de video senior <i></i> Productor</p>
+        <p class="lead" data-intro style="--d:1.05s">Produzco y edito videos para creadores y marcas que quieren comunicar mejor,
+          conectar con su audiencia y crecer en redes sociales.</p>
+        <div class="actions" data-intro style="--d:1.15s">
+          <a href="#proyectos" class="btn btn-glass glass">Proyectos</a>
+          <a href="#contacto" class="btn btn-chrome">Contáctame <span aria-hidden="true">→</span></a>
         </div>
-      </section>
-    </div>
+      </div>
+      <span class="horizon" data-intro="line" style="--d:1.2s" aria-hidden="true"></span>
+    </section>
 
     <!-- ================= SOBRE MÍ ================= -->
-    <section id="sobre-mi" class="wrap about">
+    <section id="sobre-mi" class="wrap about" data-section>
       <div class="about-grid">
-        <div class="about-left reveal">
-          <h2 class="display metal-text">Sobre mí</h2>
-          <p class="kicker">básicamente un <strong>obsesionado</strong> con lo que me gusta</p>
-          <div class="panel about-text">
-            <p>Soy Juan, <strong>editor de vídeo senior y productor audiovisual.</strong>
-              Empecé como fotógrafo deportivo, donde aprendí color y composición, y pasé por bodas
-              y eventos antes de especializarme en edición, motion graphics y storytelling.</p>
-            <p>Hoy trabajo con marcas, creadores, coaches y empresas. Edito, animo y llevo la
-              <strong>dirección creativa</strong> de marcas personales para que tengan una identidad
-              visual coherente.</p>
+        <div class="about-left">
+          <h2 class="display chrome reveal">Sobre mí</h2>
+          <p class="kicker reveal" style="--d:.08s">básicamente un <strong>obsesionado</strong> con lo que me gusta</p>
+          <div class="panel glass about-text reveal" style="--d:.16s">
+            <p>Mi nombre es Juan, soy <strong>editor de video senior y productor audiovisual</strong>.
+              Me interesé por la industria audiovisual desde una corta edad y, desde entonces, he participado
+              en una gran variedad de proyectos junto a marcas, creadores de contenido, deportistas y empresas.</p>
+            <p>Mi trayectoria comenzó formalmente como <strong>fotógrafo deportivo</strong>, una etapa en la que
+              desarrollé habilidades de colorización, composición y fotografía. Paralelamente, participé en
+              producciones de bodas y celebraciones municipales, ampliando mi experiencia en distintos formatos
+              audiovisuales.</p>
+            <p>Con el tiempo, me especialicé en <strong>edición de video, animación, motion graphics y storytelling</strong>.
+              He colaborado con infoproductores, coaches, dueños de negocios, médicos y empresas, desarrollando
+              experiencia en distintas áreas de la postproducción y un amplio dominio de la suite de Adobe.</p>
+            <p>Hoy cuento con equipos de alto rendimiento y estoy preparado para asumir producciones audiovisuales
+              que exijan estándares profesionales de calidad. También trabajo en la <strong>dirección creativa y
+              gestión de contenido</strong> para marcas personales, ayudándolas a desarrollar una identidad visual
+              coherente y una presencia digital sólida.</p>
           </div>
         </div>
 
-        <figure class="about-photo reveal" aria-hidden="true">
-          <img src="img/juan-about.webp" alt="" width="450" height="1045" loading="lazy" />
-        </figure>
+        <!-- Columna central: cifras sobre vidrio acanalado -->
+        <div class="stat-pillar reveal" style="--d:.2s">
+          <span class="orb" aria-hidden="true"></span>
+          <span class="flutes" aria-hidden="true"></span>
+          <div class="pillar-content">
+            <div class="big-num chrome">+4</div>
+            <p>años editando video</p>
+            <span class="pillar-line" aria-hidden="true"></span>
+            <div class="mini"><b class="chrome">+2</b><span>años con el mismo creador</span></div>
+            <div class="mini"><b class="chrome">100%</b><span>remoto</span></div>
+          </div>
+        </div>
 
-        <div class="about-right reveal">
-          <h2 class="display metal-text">Habilidades</h2>
-          <ul class="skills">
-            <li>Edición de vídeo</li>
-            <li>Motion graphics y animación</li>
-            <li>Dirección creativa</li>
-            <li>Narrativa audiovisual</li>
-            <li>VFX y corrección de color</li>
-            <li>Producción y postproducción</li>
-            <li>Estrategia de contenido</li>
+        <div class="about-right">
+          <h2 class="display chrome reveal">Habilidades:</h2>
+          <ul class="skills reveal" style="--d:.1s">
+            <li>Motion Graphics y Animación</li>
+            <li>Edición de Video</li>
+            <li>Dirección Creativa</li>
+            <li>Narrativa Audiovisual</li>
+            <li>Efectos Visuales (VFX)</li>
+            <li>Colorización y Corrección de Color</li>
+            <li>Producción Audiovisual</li>
+            <li>Estrategia de Contenido</li>
+            <li>Postproducción Audiovisual</li>
+            <li>Desarrollo de Conceptos Creativos</li>
+            <li>Composición Visual</li>
             <li>Fotografía</li>
+            <li>Optimización de Contenido para Redes Sociales</li>
           </ul>
-          <div class="panel workspace">
+          <div class="panel glass workspace reveal" style="--d:.2s">
             <h3>Mi espacio de trabajo</h3>
             <ul class="tools">
-              <li title="Adobe Lightroom"><span>Lr</span></li>
-              <li title="Adobe Premiere Pro"><span>Pr</span></li>
-              <li title="Adobe After Effects"><span>Ae</span></li>
-              <li title="Adobe Photoshop"><span>Ps</span></li>
-              <li title="Slack"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3.5a1.75 1.75 0 1 0 0 3.5h1.75V5.25A1.75 1.75 0 0 0 9 3.5Zm0 4.75H4.5a1.75 1.75 0 1 0 0 3.5H9a1.75 1.75 0 1 0 0-3.5Zm11.5 1.75a1.75 1.75 0 1 0-3.5 0v1.75h1.75A1.75 1.75 0 0 0 20.5 10Zm-4.75 0V5.25a1.75 1.75 0 1 0-3.5 0V10a1.75 1.75 0 1 0 3.5 0ZM15 20.5a1.75 1.75 0 1 0 0-3.5h-1.75v1.75A1.75 1.75 0 0 0 15 20.5Zm0-4.75h4.5a1.75 1.75 0 1 0 0-3.5H15a1.75 1.75 0 1 0 0 3.5ZM3.5 14a1.75 1.75 0 1 0 3.5 0v-1.75H5.25A1.75 1.75 0 0 0 3.5 14Zm4.75 0v4.75a1.75 1.75 0 1 0 3.5 0V14a1.75 1.75 0 1 0-3.5 0Z"/></svg></li>
-              <li title="Artlist"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2.5 20h19L12 3Zm0 5.2 5.6 9.8H6.4L12 8.2Z"/></svg></li>
-              <li title="Notion"><span class="serif">N</span></li>
+              <li class="glass" title="Adobe Lightroom"><span>Lr</span></li>
+              <li class="glass" title="Adobe Premiere Pro"><span>Pr</span></li>
+              <li class="glass" title="Adobe After Effects"><span>Ae</span></li>
+              <li class="glass" title="Adobe Photoshop"><span>Ps</span></li>
+              <li class="glass" title="Slack"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3.5a1.75 1.75 0 1 0 0 3.5h1.75V5.25A1.75 1.75 0 0 0 9 3.5Zm0 4.75H4.5a1.75 1.75 0 1 0 0 3.5H9a1.75 1.75 0 1 0 0-3.5Zm11.5 1.75a1.75 1.75 0 1 0-3.5 0v1.75h1.75A1.75 1.75 0 0 0 20.5 10Zm-4.75 0V5.25a1.75 1.75 0 1 0-3.5 0V10a1.75 1.75 0 1 0 3.5 0ZM15 20.5a1.75 1.75 0 1 0 0-3.5h-1.75v1.75A1.75 1.75 0 0 0 15 20.5Zm0-4.75h4.5a1.75 1.75 0 1 0 0-3.5H15a1.75 1.75 0 1 0 0 3.5ZM3.5 14a1.75 1.75 0 1 0 3.5 0v-1.75H5.25A1.75 1.75 0 0 0 3.5 14Zm4.75 0v4.75a1.75 1.75 0 1 0 3.5 0V14a1.75 1.75 0 1 0-3.5 0Z"/></svg></li>
+              <li class="glass" title="Artlist"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2.5 20h19L12 3Zm0 5.2 5.6 9.8H6.4L12 8.2Z"/></svg></li>
+              <li class="glass" title="Notion"><span class="serif">N</span></li>
             </ul>
           </div>
         </div>
@@ -159,34 +144,67 @@
     </section>
 
     <!-- ================= PROYECTOS ================= -->
-    <section id="proyectos" class="wrap projects">
-      <div class="section-head reveal">
-        <h2 class="metal-text">Lo que hago.</h2>
-        <p>Del montaje al acabado final, pensado para cada plataforma.</p>
+    <section id="proyectos" class="wrap projects" data-section>
+      <div class="split-head">
+        <h2 class="title-light chrome-soft reveal">Lo que hago</h2>
+        <p class="reveal" style="--d:.1s">Del montaje al acabado final: edición, animación, sonido y dirección creativa
+          pensados para cada plataforma.</p>
       </div>
-      <div class="grid" id="grid"></div>
+      <span class="rule reveal" aria-hidden="true"></span>
+      <div class="p-grid" id="grid"></div>
     </section>
 
     <!-- ================= TESTIMONIOS ================= -->
-    <section id="testimonios" class="wrap testimonials">
-      <div class="center-head reveal">
-        <div class="dots" aria-hidden="true"><span></span><span></span><span></span></div>
-        <h2 class="metal-text">Lo que dicen<br />mis clientes</h2>
-        <p class="label">Testimonios</p>
+    <section id="testimonios" class="testimonials" data-section>
+      <div class="wrap center-head">
+        <div class="dots reveal" aria-hidden="true"><span></span><span></span><span></span></div>
+        <h2 class="chrome reveal" style="--d:.06s">Lo que dicen<br />mis clientes</h2>
+        <p class="label reveal" style="--d:.12s">Testimoniales</p>
       </div>
-      <div class="t-grid" id="testimonials"></div>
+
+      <div class="ring reveal" style="--d:.15s" id="ring" tabindex="0" aria-roledescription="carrusel" aria-label="Testimonios">
+        <div class="ring-track" id="ring-track"></div>
+      </div>
+      <div class="ring-ui reveal" style="--d:.2s">
+        <button class="ring-btn glass" id="ring-prev" aria-label="Anterior">←</button>
+        <div class="ring-dots" id="ring-dots" role="tablist"></div>
+        <button class="ring-btn glass" id="ring-next" aria-label="Siguiente">→</button>
+      </div>
+      <div class="ring-progress" aria-hidden="true"><span id="ring-progress"></span></div>
+    </section>
+
+    <!-- ================= CONTACTO ================= -->
+    <section id="contacto" class="wrap contact" data-section>
+      <div class="contact-visual reveal" aria-hidden="true">
+        <span class="orb"></span>
+        <span class="flutes"></span>
+      </div>
+      <div class="contact-copy">
+        <p class="label reveal">Contacto</p>
+        <h2 class="title-light reveal" style="--d:.06s"><span class="chrome-soft">Trabajemos</span> <span class="chrome strong">juntos</span></h2>
+        <p class="lead reveal" style="--d:.12s">¿Tienes un proyecto en mente? Cuéntame la idea y le damos forma.</p>
+        <a href="mailto:pikk4s.dm@gmail.com" class="btn btn-chrome reveal" style="--d:.18s">Empezar un proyecto <span aria-hidden="true">↗</span></a>
+        <div class="contact-cards">
+          <a href="mailto:pikk4s.dm@gmail.com" class="c-card glass reveal" style="--d:.24s">
+            <span class="c-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 6h16v12H4z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span>
+            <span><small>Email</small>pikk4s.dm@gmail.com</span>
+          </a>
+          <a href="https://www.youtube.com/@Pikk4s" target="_blank" rel="noopener" class="c-card glass reveal" style="--d:.3s">
+            <span class="c-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="3.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10.5 9.5v5l4-2.5z" fill="currentColor"/></svg></span>
+            <span><small>YouTube</small>@Pikk4s</span>
+          </a>
+        </div>
+      </div>
     </section>
   </main>
 
-  <!-- ================= CONTACTO ================= -->
-  <footer id="contacto" class="wrap">
-    <h2 class="metal-text">¿Tienes un proyecto en mente?</h2>
-    <a href="mailto:pikk4s.dm@gmail.com" class="btn btn-prism">pikk4s.dm@gmail.com →</a>
-    <p class="small">© <span id="year"></span> Pikk4s · Editor de vídeo senior y productor.</p>
+  <footer class="wrap footer">
+    <span class="rule" aria-hidden="true"></span>
+    <p>© <span id="year"></span> Pikk4s · Editor de video senior y productor.</p>
   </footer>
 
-  <script src="js/projects.js?v=52bac36c"></script>
-  <script src="js/testimonials.js?v=3a1cea03"></script>
-  <script src="js/main.js?v=83fbc796"></script>
+  <script src="js/projects.js?v=1ebb56a6"></script>
+  <script src="js/testimonials.js?v=917d2831"></script>
+  <script src="js/main.js?v=cfe4a6fd"></script>
 </body>
 </html>
